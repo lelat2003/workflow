@@ -1,0 +1,25 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "description": "My Web Workflow with NPM, SASS, GULP, and more...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lelat2003/workflow.git"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "GIT",
+    "GULP"
+  ],
+  "author": "T. R.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lelat2003/workflow/issues"
+  },
+  "homepage": "https://github.com/lelat2003/workflow#readme"
+}
