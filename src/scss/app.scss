@@ -1,8 +1,14 @@
-$black: '#00ff00';
+$black: #000;
+$bg_color: #f0f0f0;
 
 body {
-    background-color: pink;
+    background-color: $bg_color;
+    margin: 10px;
+    padding: 10px;
 }
 h1 {
-    color: aliceblue;
+    color: lightsteelblue;
+}
+h1:hover {
+    transition: color 1s ease;
 }
