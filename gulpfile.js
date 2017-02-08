@@ -4,12 +4,14 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
+    clean = require('gulp-clean'),
     autoprefixer = require('gulp-autoprefixer');
 
 
 var SOURCEPATHS = {
     htmlSource: 'src/*.html',
-    sassSource: 'src/scss/*.scss'
+    sassSource: 'src/scss/*.scss',
+    jsSource: 'src/js/**'
 }
 
 var APPPATH = {
@@ -17,6 +19,22 @@ var APPPATH = {
     css: 'app/css',
     js: 'app/js'
 }
+
+gulp.task('clean-html', function() {
+    return gulp.src(APPPATH.root + '/*.html', {read: false, force: true})
+        .pipe(clean());
+});
+
+gulp.task('clean-scripts', function() {
+    return gulp.src(APPPATH.js + '/*.js', {read: false, force: true})
+        .pipe(clean());
+});
+
+gulp.task('scripts', ['clean-scripts'], function() {
+    gulp.src(SOURCEPATHS.jsSource)
+        .pipe(gulp.dest(APPPATH.js))
+})
+
 
 gulp.task('sass', function() {
     return gulp.src(SOURCEPATHS.sassSource)
@@ -34,14 +52,15 @@ gulp.task('serve', ['sass'], function() {
 });
 
 
-gulp.task('copy', function() {
+gulp.task('copy', ['clean-html'], function() {
     gulp.src(SOURCEPATHS.htmlSource)
         .pipe(gulp.dest(APPPATH.root))
 });
 
-gulp.task('watch', ['serve', 'sass', 'copy'], function() {
+gulp.task('watch', ['serve', 'sass', 'copy', 'clean-html', 'clean-scripts', 'scripts'], function() {
     gulp.watch([SOURCEPATHS.sassSource], ['sass']);
      gulp.watch([SOURCEPATHS.htmlSource], ['copy']);
+    gulp.watch([SOURCEPATHS.jsSource], ['scripts']);
 })
 
 gulp.task('default', ['watch']);
