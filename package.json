@@ -24,13 +24,18 @@
   "homepage": "https://github.com/lelat2003/workflow#readme",
   "devDependencies": {
     "autoprefixer": "^6.6.1",
+    "bootstrap": "^3.3.7",
     "browser-sync": "^2.18.7",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-browserify": "^0.5.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^6.3.0",
     "gulp-sass": "^3.1.0",
-    "gulp-watch": "^4.3.11"
+    "gulp-watch": "^4.3.11",
+    "jquery": "^3.1.1",
+    "merge-stream": "^1.0.1",
+    "mustache": "^2.3.0"
   }
 }
