@@ -42,13 +42,40 @@
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             </a>
 
-        </div>
+        </div><!-- /#slider -->
     
         </div><!-- /.row -->
+        
+        <div class="container">
+            <div class="row">
+                <div id="gallery" class="gallery">
+                    
+                </div>
+                <script id="template" type="x-tmpl-mustache">
+                    {{#gallery}}
+                    
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="img/visit/{{image}}" alt="">
+                            </div>
+                            <div class="caption">
+                                <h3 class="text-center">
+                                    {{destiny}}
+                                </h3>
+                            </div>
+                        </div>
+                    
+                    {{/gallery}}
+                </script>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        
     </div><!-- /.container -->
     
 <!--    <script>say_hello();</script>-->
 </body>
     
     <script src="js/main.js"></script>
+    
+    
 </html>
